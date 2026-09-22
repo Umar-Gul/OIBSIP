@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umar Gul — Full-Stack Laravel Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo">UG<span>.</span></a>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <label for="menu-toggle" class="menu-btn" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </label>
+  </div>
+  <nav class="nav-links-mobile">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero" id="top">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="avatar-ring reveal-load" style="--d:0s">
+        <div class="avatar">UG</div>
+      </div>
+      <h1 class="reveal-load" style="--d:0.08s">Umar Gul</h1>
+      <p class="role reveal-load" style="--d:0.16s">Full-Stack Laravel Developer</p>
+      <p class="hero-sub reveal-load" style="--d:0.24s">Building admin systems, booking platforms, and the frontend that sits on top of them — based in Peshawar, Pakistan.</p>
+      <div class="hero-actions reveal-load" style="--d:0.32s">
+        <a href="#projects" class="btn btn-primary">See my work</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="section-inner reveal">
+      <span class="section-label">About</span>
+      <p class="about-text">I'm a full-stack developer working mainly in Laravel and PHP — building admin dashboards, multi-module booking systems, and the UI layered on top of them. Alongside client work, I'm building out AWS fundamentals through a PSEB-backed certification track aimed at the Solutions Architect Associate exam. I like design systems that hold together: consistent typography, deliberate colour, layouts that don't feel like a template.</p>
+    </div>
+  </section>
+
+  <section class="skills" id="skills">
+    <div class="section-inner reveal">
+      <span class="section-label">Skills</span>
+      <div class="skills-grid">
+        <div class="skill-group skill-violet">
+          <h3>Backend</h3>
+          <ul>
+            <li>Laravel</li>
+            <li>PHP</li>
+            <li>MySQL &amp; Eloquent ORM</li>
+            <li>RESTful APIs</li>
+          </ul>
+        </div>
+        <div class="skill-group skill-pink">
+          <h3>Frontend</h3>
+          <ul>
+            <li>Blade Templates</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Alpine.js</li>
+            <li>Tailwind / Bootstrap</li>
+          </ul>
+        </div>
+        <div class="skill-group skill-cyan">
+          <h3>Cloud &amp; Tools</h3>
+          <ul>
+            <li>AWS — EC2, EBS, EFS, IAM</li>
+            <li>Git &amp; GitHub</li>
+            <li>DataTables</li>
+            <li>SweetAlert2</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects" id="projects">
+    <div class="section-inner reveal">
+      <span class="section-label">Projects</span>
+      <div class="project-list">
+
+        <article class="project-card">
+          <div class="project-accent accent-violet"></div>
+          <div class="project-head">
+            <h3>Halimzai Wedding Hall</h3>
+            <a href="#" class="project-link">GitHub ↗</a>
+          </div>
+          <p>Admin system for a wedding hall business, built in Laravel 12 — manages bookings, payments, and real-time availability tracking.</p>
+          <div class="project-tags"><span>Laravel</span><span>MySQL</span><span>Bootstrap</span></div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-accent accent-pink"></div>
+          <div class="project-head">
+            <h3>Pharmacy Management System</h3>
+            <a href="#" class="project-link">GitHub ↗</a>
+          </div>
+          <p>Full records management build in Laravel 13 covering inventory, sales, and pharmacy operations from the ground up.</p>
+          <div class="project-tags"><span>Laravel 13</span><span>React/Vite</span><span>SQLite</span></div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-accent accent-cyan"></div>
+          <div class="project-head">
+            <h3>PlaySoarGames</h3>
+            <a href="#" class="project-link">GitHub ↗</a>
+          </div>
+          <p>A Laravel-based gaming portal, aiming for the browsing experience and visual polish of platforms like Poki.com.</p>
+          <div class="project-tags"><span>Laravel</span><span>UI/UX</span></div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-accent accent-amber"></div>
+          <div class="project-head">
+            <h3>Ettazenn</h3>
+            <a href="#" class="project-link">GitHub ↗</a>
+          </div>
+          <p>Landing page for a wellness app, built with an emphasis on animation and responsiveness across devices.</p>
+          <div class="project-tags"><span>HTML/CSS</span><span>Tailwind</span><span>GSAP</span></div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="section-inner contact-inner reveal">
+      <div>
+        <span class="section-label">Contact</span>
+        <h2>Let's build something.</h2>
+        <p class="contact-sub">Open to freelance work and full-stack roles — reach out directly or find me on GitHub and LinkedIn.</p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:umar@example.com" class="contact-link">
+          <span class="contact-icon icon-mail" aria-hidden="true"></span>
+          <span>
+            <span class="contact-label">Email</span>
+            umar@example.com
+          </span>
+        </a>
+        <a href="#" class="contact-link">
+          <span class="contact-icon icon-code" aria-hidden="true"></span>
+          <span>
+            <span class="contact-label">GitHub</span>
+            https://github.com/repos?q=owner%3A%40me
+          </span>
+        </a>
+        <a href="#" class="contact-link">
+          <span class="contact-icon icon-link" aria-hidden="true"></span>
+          <span>
+            <span class="contact-label">LinkedIn</span>
+            linkedin.com/in/umar-gul
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>© 2026 Umar Gul. Built with HTML &amp; CSS.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

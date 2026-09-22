@@ -1,0 +1,243 @@
+/* ==========================================================
+   Temperature Converter
+   Tokens
+   ========================================================== */
+:root {
+  --bg: #F4F5F8;
+  --card: #FFFFFF;
+  --text: #1A1D24;
+  --text-muted: #6B7280;
+  --text-faint: #B0B4BD;
+  --border: #E4E6ED;
+  --error: #DC2626;
+  --error-soft: #FEE2E2;
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  min-height: 100vh;
+}
+
+.wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.card {
+  width: 100%;
+  max-width: 460px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px 36px 36px;
+  box-shadow: 0 24px 60px -30px rgba(20, 22, 30, 0.18);
+}
+
+.head { text-align: center; margin-bottom: 32px; }
+
+.head h1 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.head p { color: var(--text-muted); font-size: 14.5px; }
+
+/* ==========================================================
+   Thermometer + input
+   ========================================================== */
+.thermo-row {
+  display: flex;
+  gap: 24px;
+  align-items: flex-end;
+  margin-bottom: 28px;
+}
+
+.thermo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.thermo-tube {
+  width: 14px;
+  height: 130px;
+  border-radius: 8px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  padding: 2px;
+}
+
+.thermo-fill {
+  width: 100%;
+  height: 4%;
+  border-radius: 6px;
+  transition: height 0.4s ease, background 0.4s ease;
+}
+
+.thermo-bulb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  margin-top: -3px;
+  transition: background 0.4s ease;
+}
+
+.input-block { flex: 1; display: flex; flex-direction: column; gap: 14px; }
+
+.field-label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: none;
+  margin-bottom: 6px;
+  padding: 0;
+  border: none;
+}
+
+.temp-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: 17px;
+  color: var(--text);
+  background: var(--bg);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.temp-input:focus {
+  outline: none;
+  border-color: var(--text);
+  box-shadow: 0 0 0 3px rgba(26, 29, 36, 0.08);
+}
+
+.unit-select {
+  border: none;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+}
+
+.unit-option {
+  flex: 1;
+  position: relative;
+}
+
+.unit-option input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+}
+
+.unit-option span {
+  display: block;
+  text-align: center;
+  padding: 9px 0;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--text-muted);
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.unit-option input:checked + span {
+  background: var(--text);
+  border-color: var(--text);
+  color: #fff;
+}
+
+.unit-option input:focus-visible + span {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+.btn-convert {
+  margin-top: 4px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: var(--text);
+  color: #fff;
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.1s ease;
+}
+
+.btn-convert:hover { opacity: 0.88; }
+.btn-convert:active { transform: scale(0.98); }
+
+.error-msg {
+  min-height: 18px;
+  font-size: 13px;
+  color: var(--error);
+}
+
+/* ==========================================================
+   Results
+   ========================================================== */
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.results.has-result { opacity: 1; }
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.result-row.is-input-unit { background: var(--bg); }
+
+.result-label {
+  font-size: 13.5px;
+  color: var(--text-muted);
+}
+
+.result-value {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* ==========================================================
+   Responsive
+   ========================================================== */
+@media (max-width: 420px) {
+  .card { padding: 32px 24px 28px; }
+  .thermo-row { gap: 18px; }
+  .thermo-tube { height: 110px; }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Temperature Converter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<main class="wrap">
+  <div class="card">
+
+    <div class="head">
+      <h1>Temperature Converter</h1>
+      <p>Enter a value, pick its unit, and convert.</p>
+    </div>
+
+    <div class="thermo-row">
+      <div class="thermo" aria-hidden="true">
+        <div class="thermo-tube">
+          <div class="thermo-fill" id="thermoFill"></div>
+        </div>
+        <div class="thermo-bulb" id="thermoBulb"></div>
+      </div>
+
+      <div class="input-block">
+        <label for="tempInput" class="field-label">Value</label>
+        <input
+          type="text"
+          inputmode="decimal"
+          id="tempInput"
+          class="temp-input"
+          placeholder="e.g. 25"
+          autocomplete="off"
+        >
+
+        <fieldset class="unit-select">
+          <legend class="field-label">Input unit</legend>
+          <label class="unit-option">
+            <input type="radio" name="unit" value="C" checked>
+            <span>°C</span>
+          </label>
+          <label class="unit-option">
+            <input type="radio" name="unit" value="F">
+            <span>°F</span>
+          </label>
+          <label class="unit-option">
+            <input type="radio" name="unit" value="K">
+            <span>K</span>
+          </label>
+        </fieldset>
+
+        <button type="button" id="convertBtn" class="btn-convert">Convert</button>
+
+        <p id="errorMsg" class="error-msg" role="alert" aria-live="assertive"></p>
+      </div>
+    </div>
+
+    <div class="results" id="results">
+      <div class="result-row" data-unit="C">
+        <span class="result-label">Celsius</span>
+        <span class="result-value" id="outC">—</span>
+      </div>
+      <div class="result-row" data-unit="F">
+        <span class="result-label">Fahrenheit</span>
+        <span class="result-value" id="outF">—</span>
+      </div>
+      <div class="result-row" data-unit="K">
+        <span class="result-label">Kelvin</span>
+        <span class="result-value" id="outK">—</span>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<script src="js/main.js"></script>
+</body>
+</html>
